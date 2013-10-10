@@ -1,0 +1,10 @@
+# I think this is from lhunath or greycat on the wiki
+
+confirm () { 
+    echo -n "$1 [y/n]? "
+    read -r reply
+    case $reply in 
+        [Yy]*) echo true ;;
+        *) echo false ;;
+    esac
+}
