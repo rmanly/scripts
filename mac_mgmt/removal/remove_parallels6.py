@@ -64,7 +64,8 @@ def expand_globs():
             to_remove.append(expanded)
 
 
-def remove_app(parallels_path):
+def remove_all():
+def remove_dir(path):
     for root, dirs, files in os.walk(parallels_path, topdown=False):
         for name in files:
             os.remove(os.path.join(root, name))
@@ -103,11 +104,7 @@ def main():
     check_jobs()
     check_kexts()
     expand_globs()
-
-    if os.path.exists(app_path):
-        remove_app(app_path)
-    else:
-        print 'No /Applications/Parallels.app'
+    remove_all()
 
 
 if __name__ == '__main__':
