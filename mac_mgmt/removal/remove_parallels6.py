@@ -4,6 +4,7 @@ import glob
 import os
 from subprocess import Popen, PIPE
 
+
 globs = ['/var/db/receipts/com.parallels.pkg.virtualization.*',
         '/Library/StartupItems/Parallels*,'
         '/Library/LaunchAgents/com.parallels.*,'
@@ -35,8 +36,6 @@ to_remove = ['/Library/Parallels',
             '/usr/bin/prl_fsd',
             '/usr/include/parallels-virtualization-sdk',
             '/usr/share/parallels-virtualization-sdk']
-
-
 
 
 def check_jobs():
