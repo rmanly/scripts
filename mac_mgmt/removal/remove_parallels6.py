@@ -20,19 +20,6 @@ parallels_kexts = ['com.parallels.kext.prl_hid_hook',
                 'com.parallels.kext.prl_usb_connect',
                 'com.parallels.kext.prl_vnic']
 
-
-def running_list(command):
-    '''(list) -> str
-
-    returns a string of stdout from given command & arguments in list of strings
-
-    >>>running_list(['echo', 'foo'])
-    'foo\n'
-    '''
-    process = Popen(command, stdout=PIPE, stderr=PIPE)
-    (stdout, stderr) = process.communicate()
-
-    return stdout 
 to_remove = ['/Library/Parallels',
             '/Applications/Parallels\ Desktop.app',
             '/Library/LaunchDaemons/com.parallels.desktop.launchdaemon.plist'i,
@@ -50,16 +37,6 @@ to_remove = ['/Library/Parallels',
             '/usr/share/parallels-virtualization-sdk']
 
 
-def stop_job(job_label):
-    print 'Stopping', job_label
-    Popen(['launchctl', 'stop', job_label]).wait()
-    print job_label, 'stopped'
-
-
-def unload_kext(identifier):
-    print 'Unloading', identifier
-    Popen(['kextunload', '-b', identifier]).wait()
-    print identifier, 'unloaded'
 
 
 def check_jobs():
@@ -88,6 +65,32 @@ def remove_app(parallels_path):
             os.remove(os.path.join(root, name))
         for name in dirs:
             os.rmdir(os.path.join(root, name))
+
+
+def running_list(command):
+    '''(list) -> str
+
+    returns a string of stdout from given command & arguments in list of strings
+
+    >>>running_list(['echo', 'foo'])
+    'foo\n'
+    '''
+    process = Popen(command, stdout=PIPE, stderr=PIPE)
+    (stdout, stderr) = process.communicate()
+
+    return stdout 
+
+
+def stop_job(job_label):
+    print 'Stopping', job_label
+    Popen(['launchctl', 'stop', job_label]).wait()
+    print job_label, 'stopped'
+
+
+def unload_kext(identifier):
+    print 'Unloading', identifier
+    Popen(['kextunload', '-b', identifier]).wait()
+    print identifier, 'unloaded'
 
 
 def main():
