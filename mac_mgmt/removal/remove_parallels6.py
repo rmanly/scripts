@@ -8,6 +8,7 @@ from subprocess import Popen, PIPE
 globs = ['/var/db/receipts/com.parallels.pkg.virtualization.*',
         '/Library/StartupItems/Parallels*,'
         '/Library/LaunchAgents/com.parallels.*,'
+        '/Library/Python/*/site-packages/prlsdkapi',
         '/etc/pam.d/prl_disp_service*,'
         '/usr/share/man/man8/prl*']
 
@@ -27,7 +28,6 @@ to_remove = ['/Library/Parallels',
             '/Library/QuickLook/ParallelsQL.qlgenerator',
             '/Library/Spotlight/ParallelsMD.mdimporter',
             '/Library/Frameworks/ParallelsVirtualizationSDK.framework',
-            '/Library/Python/*/site-packages/prlsdkapi',
             '/usr/bin/prl_perf_ctl',
             '/usr/bin/prlctl',
             '/usr/bin/prlsrvctl',
