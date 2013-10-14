@@ -61,7 +61,8 @@ def check_kexts():
 
 def expand_globs():
     for item in globs:
-        to_remove.append(glob.glob(item))
+        for expanded in glob.glob(item):
+            to_remove.append(expanded)
 
 
 def remove_app(parallels_path):
