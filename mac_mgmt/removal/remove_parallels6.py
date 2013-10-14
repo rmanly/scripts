@@ -102,7 +102,7 @@ def main():
     app_path = '/Applications/Parallels.app'
     check_jobs()
     check_kexts()
-    expandglobs()
+    expand_globs()
 
     if os.path.exists(app_path):
         remove_app(app_path)
