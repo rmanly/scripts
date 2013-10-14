@@ -70,8 +70,6 @@ def remove_all():
             remove_dir(item)
         elif os.path.exists(item) and os.path.isfile(item):
             os.remove(item)
-        else:
-            print item, "not found."
 
 
 def remove_dir(path):
