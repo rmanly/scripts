@@ -65,6 +65,15 @@ def expand_globs():
 
 
 def remove_all():
+    for item in to_remove:
+        if os.path.exists(item) and os.isdir(item):
+            remove_dir(item)
+        elif os.path.exists(item) and os.isfile(item):
+            os.remove(item)
+        else:
+            print item, "not found."
+
+
 def remove_dir(path):
     for root, dirs, files in os.walk(parallels_path, topdown=False):
         for name in files:
