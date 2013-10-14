@@ -23,7 +23,7 @@ parallels_kexts = ['com.parallels.kext.prl_hid_hook',
 
 to_remove = ['/Library/Parallels',
             '/Applications/Parallels\ Desktop.app',
-            '/Library/LaunchDaemons/com.parallels.desktop.launchdaemon.plist'i,
+            '/Library/LaunchDaemons/com.parallels.desktop.launchdaemon.plist',
             '/Library/QuickLook/ParallelsQL.qlgenerator',
             '/Library/Spotlight/ParallelsMD.mdimporter',
             '/Library/Frameworks/ParallelsVirtualizationSDK.framework',
