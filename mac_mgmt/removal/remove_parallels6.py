@@ -1,7 +1,14 @@
 #!/usr/bin/python
 
+import glob
 import os
 from subprocess import Popen, PIPE
+
+globs = ['/var/db/receipts/com.parallels.pkg.virtualization.*',
+        '/Library/StartupItems/Parallels*,'
+        '/Library/LaunchAgents/com.parallels.*,'
+        '/etc/pam.d/prl_disp_service*,'
+        '/usr/share/man/man8/prl*']
 
 parallels_jobs = ['com.parallels.desktop.launchdaemon',
                 'com.parallels.vm.prl_naptd',
