@@ -26,6 +26,21 @@ def running_list(command):
     (stdout, stderr) = process.communicate()
 
     return stdout 
+to_remove = ['/Library/Parallels',
+            '/Applications/Parallels\ Desktop.app',
+            '/Library/LaunchDaemons/com.parallels.desktop.launchdaemon.plist'i,
+            '/Library/QuickLook/ParallelsQL.qlgenerator',
+            '/Library/Spotlight/ParallelsMD.mdimporter',
+            '/Library/Frameworks/ParallelsVirtualizationSDK.framework',
+            '/Library/Python/*/site-packages/prlsdkapi',
+            '/usr/bin/prl_perf_ctl',
+            '/usr/bin/prlctl',
+            '/usr/bin/prlsrvctl',
+            '/usr/bin/prlhosttime',
+            '/usr/bin/prl_disk_tool',
+            '/usr/bin/prl_fsd',
+            '/usr/include/parallels-virtualization-sdk',
+            '/usr/share/parallels-virtualization-sdk']
 
 
 def stop_job(job_label):
