@@ -6,10 +6,10 @@ from subprocess import Popen, PIPE
 
 
 globs = ['/var/db/receipts/com.parallels.pkg.virtualization.*',
-        '/Library/StartupItems/Parallels*,'
-        '/Library/LaunchAgents/com.parallels.*,'
+        '/Library/StartupItems/Parallels*',
+        '/Library/LaunchAgents/com.parallels.*',
         '/Library/Python/*/site-packages/prlsdkapi',
-        '/etc/pam.d/prl_disp_service*,'
+        '/etc/pam.d/prl_disp_service*',
         '/usr/share/man/man8/prl*']
 
 parallels_jobs = ['com.parallels.desktop.launchdaemon',
