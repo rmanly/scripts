@@ -59,6 +59,11 @@ def check_kexts():
         print 'No Parallels kexts loaded'
 
 
+def expand_globs():
+    for item in globs:
+        to_remove.append(glob.glob(item))
+
+
 def remove_app(parallels_path):
     for root, dirs, files in os.walk(parallels_path, topdown=False):
         for name in files:
@@ -97,6 +102,7 @@ def main():
     app_path = '/Applications/Parallels.app'
     check_jobs()
     check_kexts()
+    expandglobs()
 
     if os.path.exists(app_path):
         remove_app(app_path)
