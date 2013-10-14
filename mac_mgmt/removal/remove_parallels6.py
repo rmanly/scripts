@@ -80,6 +80,7 @@ def remove_dir(path):
             os.remove(os.path.join(root, name))
         for name in dirs:
             os.rmdir(os.path.join(root, name))
+    os.rmdir(path)
 
 
 def running_list(command):
