@@ -110,7 +110,6 @@ def unload_kext(identifier):
 
 
 def main():
-    app_path = '/Applications/Parallels.app'
     check_jobs()
     check_kexts()
     expand_globs()
