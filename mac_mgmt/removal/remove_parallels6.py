@@ -66,9 +66,9 @@ def expand_globs():
 
 def remove_all():
     for item in to_remove:
-        if os.path.exists(item) and os.isdir(item):
+        if os.path.exists(item) and os.path.isdir(item):
             remove_dir(item)
-        elif os.path.exists(item) and os.isfile(item):
+        elif os.path.exists(item) and os.path.isfile(item):
             os.remove(item)
         else:
             print item, "not found."
