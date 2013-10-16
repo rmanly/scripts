@@ -1,0 +1,3 @@
+#!/bin/bash
+
+mkdir -p "$HOME/Desktop/dock" && cp "$HOME/Library/Preferences/com.apple.dock.plist" "$HOME/Desktop/dock/"
