@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm "$HOME/Library/Preferences/com.apple.dock.plist"
+
+mv "$HOME/Desktop/dock/com.apple.dock.plist" "$HOME/Library/Preferences/"
+
+pkill Dock
+
+rm -rf "$HOME/Desktop/dock"
