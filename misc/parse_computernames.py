@@ -1,3 +1,7 @@
+# Parse out computer names from WSUS Status Report to text file this is a
+# temporary step to creating a more comprehensive script that will perform
+# some actions on these machines via PSTools.
+
 import tkinter.filedialog
 import xlrd
 
