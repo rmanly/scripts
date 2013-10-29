@@ -2,8 +2,11 @@ import tkinter.filedialog
 import xlrd
 
 hostnames = []
-from_filename = tkinter.filedialog.askopenfilename(filetypes=[("Excel Files","*.xls")])
-to_filename = tkinter.filedialog.asksaveasfilename(defaultextension=".txt", filetypes=(("Text File", "*.txt"),("All Files", "*.*")))
+from_filename = tkinter.filedialog.askopenfilename(\
+        filetypes=[("Excel Files","*.xls")])
+to_filename = tkinter.filedialog.asksaveasfilename(\
+        defaultextension=".txt",\
+        filetypes=(("Text File", "*.txt"),("All Files", "*.*")))
 
 workbook = xlrd.open_workbook(filename=from_filename)
 sheet = workbook.sheet_by_index(0)
