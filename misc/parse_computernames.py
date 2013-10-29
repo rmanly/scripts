@@ -14,7 +14,9 @@ for cell_contents in sheet.col(4):
         hostname = cell_contents.split('.')[0][7:]
         hostnames.append(hostname)
 
-for hostname in hostnames:
-   to_filename.write(hostname + '\r')
+to_file = open(to_filename, 'w')
 
-to_filename.close()
+for hostname in hostnames:
+   to_file.write(hostname + '\r')
+
+to_file.close()
