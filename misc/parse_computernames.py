@@ -1,0 +1,20 @@
+import tkinter.filedialog
+import xlrd
+
+hostnames = []
+from_filename = tkinter.filedialog.askopenfilename()
+to_filename = tkinter.filedialog.asksaveasfilename()
+
+workbook = xlrd.open_workbook(filename=from_filename)
+sheet = workbook.sheet_by_index(0)
+
+for cell_contents in sheet.col(4):
+    cell_contents = str(cell_contents) 
+    if cell_contents.endswith(".org'"):
+        hostname = cell_contents.split('.')[0][7:]
+        hostnames.append(hostname)
+
+for hostname in hostnames:
+   to_filename.write(hostname + '\r')
+
+to_filename.close()
