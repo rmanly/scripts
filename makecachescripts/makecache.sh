@@ -6,8 +6,8 @@
 
 # Check to make sure we are root
 if [[ $EUID != "0" ]]; then
-   echo "${0##*/} must be run as root"
-   exit 1
+    echo "${0##*/} must be run as root"
+    exit 1
 fi
 
 if [[ $# != "2" ]]; then
