@@ -21,8 +21,8 @@ if [[ $# != "2" ]]; then
 fi
 
 #Remove unneeded KEXTS that are not need for NB to work
-/bin/cp -r "$1"/System/Library/Extensions/* /tmp/Extensions
-/bin/rm -rf /tmp/Extensions/ATI*
-/bin/rm -rf /tmp/Extensions/AMD*
-/bin/rm -rf /tmp/Extensions/ATTO*
-/sbin/kextcache -v 6 -arch x86_64 -K "$1"/mach_kernel -c "$2"/kernelcache /tmp/Extensions/
+/bin/cp -r "$1"/System/Library/Extensions/* "${tmpdir}"
+/bin/rm -rf "${tmpdir}"/ATI*
+/bin/rm -rf "${tmpdir}"/AMD*
+/bin/rm -rf "${tmpdir}"/ATTO*
+/sbin/kextcache -v 6 -arch x86_64 -K "$1"/mach_kernel -c "$2"/kernelcache "${tmpdir}"/
