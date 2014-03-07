@@ -7,15 +7,15 @@
 # Check to make sure we are root
 if [[ $EUID != "0" ]]
 then
-   echo "`basename $0` must be run as root"
+   echo "${0##*/} must be run as root"
    exit 1
 fi
 
 if [[ $# != "2" ]]
 then
-   echo "`basename $0` must have a source drive and an output directory for the kernalcache file"
+   echo "${0##*/} must have a source drive and an output directory for the kernalcache file"
    echo "e.g."
-   echo "`basename $0` / ~/Desktop/"
+   echo "${0##*/} / ~/Desktop/"
    echo ""
    exit 1
 fi
