@@ -8,7 +8,7 @@
 tmpdir=$(mktemp -d  "${0##*/}".XXX)
 
 # Check to make sure we are root
-if [[ $EUID != "0" ]]; then
+if [[ $EUID != 0 ]]; then
     echo "${0##*/} must be run as root"
     exit 1
 fi
