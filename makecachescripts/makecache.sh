@@ -15,7 +15,7 @@ if [[ $# != "2" ]]; then
    echo "e.g."
    echo "${0##*/} / ~/Desktop/"
    echo ""
-   exit 1
+   exit 2
 fi
 
 #Remove unneeded KEXTS that are not need for NB to work
