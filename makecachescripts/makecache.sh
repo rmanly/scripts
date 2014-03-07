@@ -12,14 +12,6 @@ if [[ $EUID != "0" ]]; then
     exit 1
 fi
 
-if [[ $# != "2" ]]; then
-    printf "%s\n" "${0##*/} expects $1 to be a source and $2 a destination"\
-        "This will typically be the SIU build machine and the mounted NBI dmg"\
-        "For example"
-        "${0##*/} / ~/Desktop/"
-    exit 2
-fi
-
 #Remove unneeded KEXTS that are not need for NB to work
 /bin/cp -r "$1"/System/Library/Extensions/* "${tmpdir}"
 /bin/rm -rf "${tmpdir}"/ATI*
