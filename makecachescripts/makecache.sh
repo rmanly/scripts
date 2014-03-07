@@ -5,7 +5,7 @@
 #v1.1
 
 # Check to make sure we are root
-if [[ `id -u` != "0" ]]
+if [[ $EUID != "0" ]]
 then
    echo "`basename $0` must be run as root"
    exit 1
