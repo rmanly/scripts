@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#kernalcache Builder
-#by Daniel Shane
-#v1.1
+# kernalcache Builder
+# by Daniel Shane
+# v1.1
+# modified by Ryan Manly
 
 tmpdir=$(mktemp -d  "${0##*/}".XXX)
 
@@ -12,7 +13,7 @@ if [[ $EUID != "0" ]]; then
     exit 1
 fi
 
-#Remove unneeded KEXTS that are not need for NB to work
+# Remove unneeded KEXTS that are not need for NB to work
 /bin/cp -r /System/Library/Extensions/* "${tmpdir}"
 /bin/rm -rf "${tmpdir}"/ATI*
 /bin/rm -rf "${tmpdir}"/AMD*
