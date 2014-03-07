@@ -5,13 +5,13 @@
 #v1.1
 
 # Check to make sure we are root
-if [ `id -u` != "0" ]
+if [[ `id -u` != "0" ]]
 then
    echo "`basename $0` must be run as root"
    exit 1
 fi
 
-if [ $# != "2" ]
+if [[ $# != "2" ]]
 then
    echo "`basename $0` must have a source drive and an output directory for the kernalcache file"
    echo "e.g."
