@@ -13,8 +13,8 @@ if [[ $EUID != "0" ]]; then
 fi
 
 #Remove unneeded KEXTS that are not need for NB to work
-/bin/cp -r "$1"/System/Library/Extensions/* "${tmpdir}"
+/bin/cp -r /System/Library/Extensions/* "${tmpdir}"
 /bin/rm -rf "${tmpdir}"/ATI*
 /bin/rm -rf "${tmpdir}"/AMD*
 /bin/rm -rf "${tmpdir}"/ATTO*
-/sbin/kextcache -v 6 -arch x86_64 -K "$1"/mach_kernel -c "$2"/kernelcache "${tmpdir}"/
+/sbin/kextcache -v 6 -arch x86_64 -K /mach_kernel -c $HOME/Desktop/kernelcache "${tmpdir}"/
