@@ -4,6 +4,8 @@
 #by Daniel Shane
 #v1.1
 
+tmpdir=$(mktemp -d  "${0##*/}".XXX)
+
 # Check to make sure we are root
 if [[ $EUID != "0" ]]; then
     echo "${0##*/} must be run as root"
@@ -19,10 +21,8 @@ if [[ $# != "2" ]]; then
 fi
 
 #Remove unneeded KEXTS that are not need for NB to work
-/bin/mkdir /tmp/Extensions
 /bin/cp -r "$1"/System/Library/Extensions/* /tmp/Extensions
 /bin/rm -rf /tmp/Extensions/ATI*
 /bin/rm -rf /tmp/Extensions/AMD*
 /bin/rm -rf /tmp/Extensions/ATTO*
 /sbin/kextcache -v 6 -arch x86_64 -K "$1"/mach_kernel -c "$2"/kernelcache /tmp/Extensions/
-/bin/rm -rf /tmp/Extensions
