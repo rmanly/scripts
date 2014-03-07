@@ -5,14 +5,12 @@
 #v1.1
 
 # Check to make sure we are root
-if [[ $EUID != "0" ]]
-then
+if [[ $EUID != "0" ]]; then
    echo "${0##*/} must be run as root"
    exit 1
 fi
 
-if [[ $# != "2" ]]
-then
+if [[ $# != "2" ]]; then
    echo "${0##*/} must have a source drive and an output directory for the kernalcache file"
    echo "e.g."
    echo "${0##*/} / ~/Desktop/"
