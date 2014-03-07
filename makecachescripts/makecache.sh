@@ -11,11 +11,11 @@ if [[ $EUID != "0" ]]; then
 fi
 
 if [[ $# != "2" ]]; then
-   echo "${0##*/} must have a source drive and an output directory for the kernalcache file"
-   echo "e.g."
-   echo "${0##*/} / ~/Desktop/"
-   echo ""
-   exit 2
+    printf "%s\n" "${0##*/} expects $1 to be a source and $2 a destination"\
+        "This will typically be the SIU build machine and the mounted NBI dmg"\
+        "For example"
+        "${0##*/} / ~/Desktop/"
+    exit 2
 fi
 
 #Remove unneeded KEXTS that are not need for NB to work
