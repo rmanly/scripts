@@ -9,9 +9,9 @@
 # I keep running with the while because I have seen cases of multiple instances of the
 # m86authenticator running even without fast user switching turned on *shrug*
 while pgrep -q m86Authenticator; do
-    m86_pid=$(pgrep -n m86Authenticator)
-    m86_user=$(ps -p "$m86_pid" -o user=)
-    /bin/launchctl bsexec "$m86_pid" su "$m86_user" -c 'launchctl unload /Library/LaunchAgents/com.m86security.authenticator.plist'
+    m86_pid=$(/usr/bin/pgrep -n m86Authenticator)
+    m86_user=$(/bin/ps -p "$m86_pid" -o user=)
+    /bin/launchctl bsexec "$m86_pid" /usr/bin/su "$m86_user" -c '/bin/launchctl unload /Library/LaunchAgents/com.m86security.authenticator.plist'
 done
 
 /bin/rm -rf /Applications/M86Authenticator
