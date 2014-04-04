@@ -1,6 +1,6 @@
-#!/bin/bash -x
+#!/bin/bash
 
-exec > /var/log/m86remove.log 2>&1
+# exec > /var/log/m86remove.log 2>&1
 
 while pgrep -q m86Authenticator; do
     m86_pid=$(pgrep -n m86Authenticator)
