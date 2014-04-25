@@ -3,6 +3,7 @@
 #
 #Modifies Office 2011 SP3 installer to make it instaDMG ready. Expects $1 with the iso
 #http://nbalonso.com
+# http://nbalonso.com/prepare-office-sp3-for-instadmg/
  
 TMPDIR='/tmp/buildoffice'
  
