@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# had someone complaining about DNS redirects
+# reminded me of RSPlug, turned out to be this
+# http://www.thesafemac.com/arg-downlite/
 to_unload=(/Library/LaunchAgents/com.vsearch.agent.plist
 /Library/LaunchDaemons/com.vsearch.daemon.plist
 /Library/LaunchDaemons/com.vsearch.helper.plist
