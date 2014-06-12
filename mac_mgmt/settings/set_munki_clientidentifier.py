@@ -8,7 +8,7 @@ from socket import gethostname
  
 BUNDLE_ID = 'ManagedInstalls'
  
-prefix = gethostname()[:4]
+prefix = gethostname().split('-')[0]
  
 CFPreferencesSetValue("ClientIdentifier", prefix, BUNDLE_ID,
         kCFPreferencesAnyUser, kCFPreferencesCurrentHost)
