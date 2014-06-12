@@ -2,7 +2,7 @@
  
 from Foundation import CFPreferencesSetValue
 from Foundation import CFPreferencesAppSynchronize
-from Foundation import kCFPreferenceAnyUser
+from Foundation import kCFPreferencesAnyUser
 from Foundation import kCFPreferencesCurrentHost
 from socket import gethostname
  
