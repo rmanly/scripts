@@ -8,18 +8,6 @@ user_info = []
 to_delete = []
 p = Popen("last", stdout=PIPE, stderr=PIPE)
 
-# This will read until the blank lines after the user list.
-# In the stdout there are two blanks lines and then a message
-# stating the begin date & time of the report.
-#
-# for line in iter(p.stdout.readline, '\n'):
-#     print line.strip()
-
-# This can easily hang if newline is never received
-# for example if Popen is forgotten in interactive.
-# But dealing with the blank line is annoying...
-
-# for line in p.stdout:
 for line in iter(p.stdout.readline, '\n'):
     if 'Jun 13' not in line:
         user_info.append(list(line.split()))
