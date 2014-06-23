@@ -9,7 +9,7 @@ to_delete = []
 p = Popen("last", stdout=PIPE, stderr=PIPE)
 
 for line in iter(p.stdout.readline, '\n'):
-    if 'Jun 13' not in line:
+    if 'Jun' not in line:
         user_info.append(list(line.split()))
 
 for info in user_info:
