@@ -10,7 +10,7 @@ p = Popen("last", stdout=PIPE, stderr=PIPE)
 
 for line in iter(p.stdout.readline, '\n'):
     if 'Jun' not in line:
-        user_info.append(list(line.split()))
+    user_info.append(list(line.split()))
 
 for info in user_info:
     if info[0].isdigit() and len(info[0]) == 6:
