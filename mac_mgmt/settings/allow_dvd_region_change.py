@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+# this is my ATTEMPT at modifying the second half of macmule's shell script here
+# https://github.com/macmule/nonadminchangeregion/blob/master/allowNonAdminToChangeDVDRegion.sh
+# with modern authdb modification techniques for einstein2 in ##osx-server
+
 import plistlib
 import subprocess
 
