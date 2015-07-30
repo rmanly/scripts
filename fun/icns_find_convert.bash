@@ -12,12 +12,12 @@ user=$(stat -f "%Su" /dev/console)
 mkdir -p "${HOME}/Desktop/newicons/"{icns,png} 
 
 search() {
-while read -r -d $'\0' icnsfile; do
-    cp "${icnsfile}" "${icnsdir}"
-    sips -s format png --resampleHeight 128 "${icnsfile}" --out "${pngdir}" &> /dev/null
-done< <(find "${location}" -iname "*.icns" -print0)
+    while read -r -d $'\0' icnsfile; do
+        cp "${icnsfile}" "${icnsdir}"
+        sips -s format png --resampleHeight 128 "${icnsfile}" --out "${pngdir}" &> /dev/null
+    done< <(find "${location}" -iname "*.icns" -print0)
 
-chown -R "$user" "${HOME}/Desktop/newicons"
+    chown -R "$user" "${HOME}/Desktop/newicons"
 }
 
 menu() {
@@ -29,15 +29,21 @@ read -r input
 case "${input}" in
     [Aa]*)    
         location='/Applications'
+        echo "Searching /Applications"
         search
+        menu
     ;;
     [Ll]*)
         location='/Library'
+        echo "Searching /Library"
         search
+        menu
     ;;
     [Ss]*)
         location='/System'
+        echo "Searching /System"
         search
+        menu
     ;;
     [QqXx]*)
         echo "Quit"
