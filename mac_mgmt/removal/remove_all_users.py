@@ -3,7 +3,6 @@
 import glob
 from shutil import rmtree
 from subprocess import Popen, PIPE
-from sys import exit
 
 user_dirs = glob.glob('/Users/*')
 
@@ -32,6 +31,6 @@ def del_home(user_path):
             raise
 
 for path in user_dirs:
-    if not (path == '/Users/ryan' or path == '/Users/Shared'):
+    if not (path == '/Users/Shared'):
         del_home(path)
         del_user(path)
