@@ -1,11 +1,12 @@
 #!/bin/bash
 
-# Full credit to Gabe Shackney here:
+# Full credit for script to Gabe Shackney here:
 # https://jamfnation.jamfsoftware.com/discussion.html?id=14594
+# I just made it pretty…
 
 shopt -s nullglob
 
-freeSpace=$(df -g /tmp | awk 'NR==2{ print $4 } ')
+freeSpace=$(df -g /tmp | awk 'NR==2{ print $4 }')
 
 if (($freeSpace > 16)); then
     sleep 5
