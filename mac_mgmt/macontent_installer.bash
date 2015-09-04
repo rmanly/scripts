@@ -3,7 +3,7 @@
 # Full credit to Gabe Shackney here:
 # https://jamfnation.jamfsoftware.com/discussion.html?id=14594
 
-freeSpace=$(df -k /tmp | tail -1 | awk '{print $4} ')
+freeSpace=$(df -k /tmp | awk 'NR==2{ print $4 } ')
 
 if (($freeSpace > 16000000)); then
     sleep 5
