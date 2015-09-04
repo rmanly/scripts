@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Full credit to Gabe Shackney here:
 # https://jamfnation.jamfsoftware.com/discussion.html?id=14594
