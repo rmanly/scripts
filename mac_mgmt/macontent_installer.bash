@@ -5,7 +5,7 @@
 
 freeSpace=$(df -k /tmp | tail -1 | awk '{print $4} ')
 
-if (("$freeSpace" > "16000000")); then
+if (($freeSpace > 16000000)); then
     sleep 5
     /usr/sbin/installer -pkg /private/tmp/MAContent10_GarageBandCoreContent_v3.pkg -target /
     /usr/sbin/installer -pkg /private/tmp/MAContent10_PremiumPreLoopsChillwave.pkg -target /
