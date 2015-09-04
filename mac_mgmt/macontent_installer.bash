@@ -3,9 +3,9 @@
 # Full credit to Gabe Shackney here:
 # https://jamfnation.jamfsoftware.com/discussion.html?id=14594
 
-freeSpace=$(df -k /tmp | awk 'NR==2{ print $4 } ')
+freeSpace=$(df -g /tmp | awk 'NR==2{ print $4 } ')
 
-if (($freeSpace > 16000000)); then
+if (($freeSpace > 16)); then
     sleep 5
     /usr/sbin/installer -pkg /private/tmp/MAContent10_GarageBandCoreContent_v3.pkg -target /
     /usr/sbin/installer -pkg /private/tmp/MAContent10_PremiumPreLoopsChillwave.pkg -target /
