@@ -35,25 +35,6 @@ fi
 
 sleep 5
 
-rm -rf /private/tmp/MAContent10_GarageBandCoreContent_v3.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsChillwave.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsDeepHouse.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsDubstep.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsElectroHouse.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsGarageBand.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsHipHop.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsJamPack1.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsModernRnB.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsRemixTools.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsRhythmSection.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsSymphony.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsTechHouse.pkg
-rm -rf /private/tmp/MAContent10_PremiumPreLoopsWorld.pkg
-rm -rf /private/tmp/MAContent10_GarageBandCoreContent2.pkg
-rm -rf /private/tmp/MAContent10_GarageBandPremiumContent.pkg
-rm -rf /private/tmp/MAContent10_GB_StereoDrumKitsAlternative.pkg
-rm -rf /private/tmp/MAContent10_GB_StereoDrumKitsRock.pkg
-rm -rf /private/tmp/MAContent10_GB_StereoDrumKitsRnB.pkg
-rm -rf /private/tmp/MAContent10_GB_StereoDrumKitsSongWriter.pkg
+rm -rf /private/tmp/MAContent10_*.pkg
 
 exit 0
