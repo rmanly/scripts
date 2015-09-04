@@ -30,7 +30,7 @@ if (($freeSpace > 16)); then
     /usr/sbin/installer -pkg /private/tmp/MAContent10_GB_StereoDrumKitsSongWriter.pkg -target /
 else
     echo "You must have more than 15.25GB free to install GarageBand additional content.  Aborting install and cleaning up packages"
-    exit 1      ## Failure
+    exit 1
 fi
 
 sleep 5
@@ -56,4 +56,4 @@ rm -rf /private/tmp/MAContent10_GB_StereoDrumKitsRock.pkg
 rm -rf /private/tmp/MAContent10_GB_StereoDrumKitsRnB.pkg
 rm -rf /private/tmp/MAContent10_GB_StereoDrumKitsSongWriter.pkg
 
-exit 0      ## Success
+exit 0
