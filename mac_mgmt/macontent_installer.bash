@@ -3,6 +3,8 @@
 # Full credit to Gabe Shackney here:
 # https://jamfnation.jamfsoftware.com/discussion.html?id=14594
 
+shopt -s nullglob
+
 freeSpace=$(df -g /tmp | awk 'NR==2{ print $4 } ')
 
 if (($freeSpace > 16)); then
