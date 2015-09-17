@@ -6,7 +6,7 @@
 
 shopt -s nullglob
 
-freeSpace=$(df -g /tmp | awk 'NR==2{ print $4 }')
+freeSpace=$(df -g /tmp | awk 'NR == 2 { print $4 }')
 
 if (($freeSpace > 16)); then
     sleep 5
