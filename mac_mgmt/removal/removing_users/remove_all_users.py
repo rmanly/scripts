@@ -47,7 +47,7 @@ def compile_ignore_list():
 
 
 for path in user_dirs:
-    if path not in do_not_remove:
+    if path not in compile_ignore_list():
         print path + " would've been deleted"
         # del_home(path)
         # del_user(path)
