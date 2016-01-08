@@ -1,10 +1,10 @@
 #!/usr/bin/python
 
+import argparse
 import glob
 from shutil import rmtree
 from subprocess import Popen, PIPE
 
-do_not_remove = ['/Users/Shared']
 user_dirs = glob.glob('/Users/*')
 
 def del_user(user_path):
@@ -31,7 +31,23 @@ def del_home(user_path):
             # something unexpected
             raise
 
+def compile_ignore_list():
+    ignore_list = ['/Users/Shared']
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--ignore', action='append',\
+            help='Ignore specified path. Can be used more than once.')
+    args = parser.parse_args()
+
+    if args.ignore:
+        for item in args.ignore:
+            ignore_list.append(item)
+
+    return ignore_list
+
+
 for path in user_dirs:
     if path not in do_not_remove:
-        del_home(path)
-        del_user(path)
+        print path + " would've been deleted"
+        # del_home(path)
+        # del_user(path)
