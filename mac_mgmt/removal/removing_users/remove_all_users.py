@@ -21,6 +21,12 @@ def compile_ignore_list():
 
     return ignore_list
 
+## Verify if no args.ignore. Maybe have a -Y flag to set
+## Change above to something like `if args.ignore and args.yes:`
+def confirm_delete_all():
+    print "You did not specify anything from /Users to ignore."
+    print "Do you REALLY want to delete ALL everything except /Users/Shared?"
+
 def del_user(user_path):
     p = Popen(['/usr/bin/dscl', '/Local/Default', '-delete', user_path],
                 stdout=PIPE, stderr=PIPE)
