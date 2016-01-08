@@ -4,6 +4,7 @@ import glob
 from shutil import rmtree
 from subprocess import Popen, PIPE
 
+do_not_remove = ['/Users/Shared']
 user_dirs = glob.glob('/Users/*')
 
 def del_user(user_path):
@@ -31,6 +32,6 @@ def del_home(user_path):
             raise
 
 for path in user_dirs:
-    if not (path == '/Users/Shared'):
+    if path not in do_not_remove:
         del_home(path)
         del_user(path)
