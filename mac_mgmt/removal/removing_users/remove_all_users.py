@@ -7,6 +7,20 @@ from subprocess import Popen, PIPE
 
 user_dirs = glob.glob('/Users/*')
 
+def compile_ignore_list():
+    ignore_list = ['/Users/Shared']
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-i', '--ignore', action='append',\
+            help='Ignore specified path. Can be used more than once.')
+    args = parser.parse_args()
+
+    if args.ignore:
+        for item in args.ignore:
+            ignore_list.append(item)
+
+    return ignore_list
+
 def del_user(user_path):
     p = Popen(['/usr/bin/dscl', '/Local/Default', '-delete', user_path],
                 stdout=PIPE, stderr=PIPE)
@@ -30,20 +44,6 @@ def del_home(user_path):
         else:
             # something unexpected
             raise
-
-def compile_ignore_list():
-    ignore_list = ['/Users/Shared']
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-i', '--ignore', action='append',\
-            help='Ignore specified path. Can be used more than once.')
-    args = parser.parse_args()
-
-    if args.ignore:
-        for item in args.ignore:
-            ignore_list.append(item)
-
-    return ignore_list
 
 
 for path in user_dirs:
