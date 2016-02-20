@@ -3,16 +3,20 @@
 from SystemConfiguration import SCDynamicStoreCopyComputerName
 from SystemConfiguration import SCPreferencesSetComputerName
 
-ComputerName = str(SCDynamicStoreCopyComputerName(None, None)[0])
 
-parts = ComputerName.split('-')
-parts.remove('NA146')
-parts.insert(0, 'NA102')
+def main():
+    ComputerName = str(SCDynamicStoreCopyComputerName(None, None)[0])
 
-newComputerName = '-'.join(parts)
+    parts = ComputerName.split('-')
+    parts.remove('NA146')
+    parts.insert(0, 'NA102')
 
+    newComputerName = '-'.join(parts)
 
-## revisit this
-## SCPreferencesSetComputerName
-## SCPreferencesCreate
-## kCFAllocatorDefault
+    # TODO: revisit this
+    # TODO: SCPreferencesSetComputerName
+    # TODO: SCPreferencesCreate
+    # TODO: kCFAllocatorDefault
+
+if __name__ == '__main__':
+    main()
