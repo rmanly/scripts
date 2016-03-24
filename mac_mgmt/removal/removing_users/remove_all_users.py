@@ -75,9 +75,12 @@ def main():
     for all the given user_dirs attempt to delete the dir and the user
     """
     user_dirs = glob.glob('/Users/*')
+    ignore = compile_ignore_list()
 
     for path in user_dirs:
-        if path not in compile_ignore_list():
+        if path not in ignore:
+            # comment out the print and uncomment
+            # the del funcs to run for realz
             print path + " would've been deleted"
             # del_home(path)
             # del_user(path)
